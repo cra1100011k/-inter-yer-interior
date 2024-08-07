@@ -1,0 +1,104 @@
+@font-face{
+    font-family: Source-Code-Pro;
+    src: url(fonts/SourceCodePro-Black.ttf);
+    font-weight: 900;
+}
+@font-face{
+    font-family: Source-Code-Pro;
+    src: url(fonts/SourceCodePro-Light.ttf);
+    font-weight: 300;
+}
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Source-Code-Pro ;
+    box-sizing: border-box;
+}
+html{
+    font-size: 20px;
+}
+h1{
+    font-size:4rem;
+    font-weight: 900;
+    line-height: 4rem;
+
+}
+h2{
+    font-size:2rem;
+    font-weight: 300;
+    line-height: 2rem;
+}
+p{
+    font-size:1rem;
+    font-weight: 300;
+    line-height: 1rem;
+}
+.header__background img{
+    width: 100%;
+    object-fit:cover;
+}
+.header__content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.76);
+    background: rgba(255, 255, 255, 0.29);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    padding:  80px 140px;
+}
+.gallery{
+    display: flex;
+    max-width: 1300px;
+    margin: 40px auto;
+    justify-content: space-between;
+}
+.gallery__list-item{
+    position: relative;
+    overflow: hidden;
+    margin: 16px 0;
+}
+.gallery__list-item img{
+    width: 100%;
+    display: block; 
+}
+.item__text{
+    position: absolute;
+    top: 0;
+    right: 0;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    width: 50%;
+    transform: translateX(100%);
+    transition: 0.3s;
+    padding:64px 33px;
+    color: white;
+}
+.item__text::before{
+    content: url(img/icon2.svg);
+    position: absolute;
+    top: 6px;
+    left: 10px;
+
+}
+.item__text::after{
+    content: url(img/icon1.svg);
+    position: absolute;
+    bottom: 6px;
+    right: 10px;
+
+}
+.item__text hr{
+    margin: 15px 0px;
+}
+.gallery__list-item:hover .item__text{
+    transform: translateX(0);
+}
+.gallery__list-item:nth-of-type(2n+1) .item__text{
+    background: rgba(149, 84, 38, 0.50)
+}
+.gallery__list-item:nth-of-type(2n) .item__text{
+    background: rgba(50, 94, 104, 0.68)
+}
